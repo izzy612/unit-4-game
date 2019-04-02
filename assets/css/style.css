@@ -1,0 +1,11 @@
+body {
+  background-image: url("../img/bg.jpg");
+}
+
+.bg-custom {
+  background-image: url("../img/bg.jpg");
+  background-size: cover;
+  background-blend-mode: luminosity;
+  padding-top: 25px;
+  padding-bottom: 25px;
+}
