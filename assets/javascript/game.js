@@ -31,7 +31,7 @@ var reset = function () {
 }
  reset();
 
-  $(".crystal-img").on("click",  function () {
+  $(document).on("click", ".crystal-img",  function () {
   
     var number = parseInt($(this).attr("value"));
 
@@ -39,38 +39,31 @@ var reset = function () {
     console.log(counter)
 
 
-    alert("New score " + counter);
+    $(".counter").html("Counter: " + counter);
 
-    if (counter === randomResult) {
-    
-      win++;
-    
-      $(".win").text("Wins: " + win);
-      console.log("You Win")
-
-      counter = 0;
-
-      reset();
-
+      if (counter === randomResult) {
       
-
-    }
-
-    else if (counter > randomResult) {
-    
-      lost++;
-
-      $(".lost").text("Loses: " + lost);
-      console.log("You Lost")
-
-      counter = 0;
-
-      reset();
-
+        win++;
       
+        $(".win").text("Wins: " + win);
+        console.log("You Win")
 
-    }
-  
+        counter = 0;
+        
+        reset();
+
+      } else if (counter > randomResult) {
+      
+        lost++;
+
+        $(".lost").text("Loses: " + lost);
+        console.log("You Lost")
+
+        counter = 0;
+
+        reset();
+
+      }
 
   });
  
