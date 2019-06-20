@@ -3,15 +3,14 @@ var lost = 0;
 var randomResult;
 var counter = 0;
 
+
+
 var reset = function () {
    
   $(".crystals").empty();
 
   randomResult = Math.floor(Math.random() * 69) + 30;
   console.log(randomResult);
-
-  $(".result").text("Random Result: " + randomResult);
-
 
 
   for (var i = 1; i < 5; i++) {
@@ -29,9 +28,14 @@ var reset = function () {
   }
 
 }
- reset();
+reset();
+
+$(".result").append("<h1>Random#</h1>" + `<h1>${randomResult}</h1>`);
+ 
+   
 
   $(document).on("click", ".crystal-img",  function () {
+    
   
     var number = parseInt($(this).attr("value"));
 
@@ -39,13 +43,13 @@ var reset = function () {
     console.log(counter)
 
 
-    $(".counter").html("Counter: " + counter);
+    $(".counter").html("<h3>" + counter + "</h3>");
 
       if (counter === randomResult) {
       
         win++;
       
-        $(".win").text("Wins: " + win);
+        $(".win").html("<h3>Wins: " + win + "</h3>");
         console.log("You Win")
 
         counter = 0;
@@ -56,7 +60,7 @@ var reset = function () {
       
         lost++;
 
-        $(".lost").text("Loses: " + lost);
+        $(".lost").html("<h3>Loses: " + lost + "</h3>");
         console.log("You Lost")
 
         counter = 0;
@@ -66,4 +70,6 @@ var reset = function () {
       }
 
   });
+
+  
  
