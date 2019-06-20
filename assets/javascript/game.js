@@ -12,6 +12,7 @@ var reset = function () {
   randomResult = Math.floor(Math.random() * 69) + 30;
   console.log(randomResult);
 
+  $(".result").html("<h1>Random #" + randomResult + "</h1>");
 
   for (var i = 1; i < 5; i++) {
 
@@ -30,7 +31,7 @@ var reset = function () {
 }
 reset();
 
-$(".result").append("<h1>Random#</h1>" + `<h1>${randomResult}</h1>`);
+
  
    
 
